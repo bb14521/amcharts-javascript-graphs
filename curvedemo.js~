@@ -11,16 +11,17 @@ return f;
 var chartData = [];
 for ( var k = 0; k < 100; k += 1 ) {
   var p1 = {
-    category: k,
-    value: Normalgraph( k,0.05), //Call function 
-    value2: Normalgraph( k,0.10),
-    value3: Normalgraph( k,0.15),
-    value4: Normalgraph( k,0.20),
-    value5: Normalgraph( k,0.25),
-    value6: Normalgraph( k,0.30)
-  };
-  
-  chartData.push( p1 );   //ploting curve 1
+  category: k,
+  value: Normalgraph( k,0.05),
+  value2: Normalgraph( k,0.10),
+  value3: Normalgraph( k,0.15),
+  value4: Normalgraph(k,0.20),
+  value5: NormalGraph(k,0.25),
+  Value6: NormailGraph(k,0.30)
+};
+
+chartData.push(p1);      
+                
 }
                  
         
@@ -90,8 +91,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "chartCursor": {
     "categoryBalloonEnabled": false,
     "cursorAlpha": 0,
-    "zoomable": true,
-    "oneBalloonOnly": true
+    "zoomable": true
   },
   "categoryField": "category",
   "categoryAxis": {
