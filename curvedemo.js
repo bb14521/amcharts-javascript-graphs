@@ -31,68 +31,94 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "type": "serial",
   "theme": "light",
   "dataProvider": chartData,
-   "precision": 2,
+  "precision": 2,
+ //show title for each line
+
+  "legend": {
+    "horizontalGap": 10,
+    "useGraphSettings": true,
+    "markerSize": 16,
+   "position":"right"
+  },
+
+/*  "xAxis":{
+  "title":"k"
+},*/
+
   "valueAxes": [ {
-    "gridAlpha": 0.2,
-    "dashLength": 0
-  } ],
+  "title":"d/A",
+  "gridAlpha": 0.2,
+  "dashLength": 0,
+} ],
+
+  "titles":[{
+      "text":"DesignAids Graph"
+  }],
   "startDuration":1,
   "graphs": [ {
     "id":"g1",       
-    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "balloonText": "<b>k: [[category]]<br/>d/A:[[value]]</b>",
     "lineThickness": 3,
-    "valueField": "value"
-    
-     
+    "title":"a/A=0.05",
+    "valueField": "value",
+         
   }, {
     "id":"g2",       
-    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/> d/A:[[value]]</b>",
     "lineThickness": 3,
+    "title":"a/A=0.10",
     "valueField": "value2"
     
      
   }, {
      "id":"g3",       
-    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
     "lineThickness": 3,
+    "title":"a/A=0.15",
     "valueField": "value3"
     
      
   }, {  
      "id":"g4",       
-    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/> d/A:[[value]]</b>",
     "lineThickness": 3,
+    "title":"a/A=0.20",
     "valueField": "value4"
     
      
   }, { 
       "id":"g5",       
-    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
     "lineThickness": 3,
+    "title":"a/A=0.25",
     "valueField": "value5"
     
      
   }, {  
      "id":"g6",       
-    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
     "lineThickness": 3,
+    "title":"a/A=0.30",
     "valueField": "value6"       
                   
-  },{                  
-    "balloonText": "",
-    "fillAlphas": 1,
-    "type": "column",
-    "valueField": "vertical",
-    "fixedColumnWidth": 2,
-    "labelText": "[[value]]",
-    "labelOffset": 20
   } ],
+
+//Zoom effect
   "chartCursor": {
     "categoryBalloonEnabled": false,
     "cursorAlpha": 0,
     "zoomable": true,
     "oneBalloonOnly": true
   },
+
+"balloon": {
+    "borderThickness": 4,
+    "horizontalPadding": 8,
+  //  "offsetX": 50,
+    //"offsetY": 8
+   "pointerWidth":10
+},
+
   "categoryField": "category",
   "categoryAxis": {
     "gridAlpha": 0.05,
@@ -103,4 +129,4 @@ var chart = AmCharts.makeChart( "chartdiv", {
     }
   }
 
-} );
+});
