@@ -28,7 +28,7 @@ for ( var k = 0; k < 100; k += 1 ) {
  * Create a chart
  */
 var chart = AmCharts.makeChart( "chartdiv", {
-  "type": "serial",
+  "type": "xy",
   "theme": "light",
   "dataProvider": chartData,
   "precision": 2,
@@ -46,9 +46,18 @@ var chart = AmCharts.makeChart( "chartdiv", {
 },*/
 
   "valueAxes": [ {
+  "position": "left",
   "title":"d/A",
   "gridAlpha": 0.2,
   "dashLength": 0,
+  "autoGridCount": false,
+  "gridCount": 10
+}, { 
+  "position": "bottom",
+  "title": "k",
+  "maximum": 100,
+  "autoGridCount": false,
+  "gridCount": 10
 } ],
 
   "titles":[{
@@ -57,49 +66,73 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "startDuration":1,
   "graphs": [ {
     "id":"g1",       
-    "balloonText": "<b>k: [[category]]<br/>d/A:[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
+    "bullet": "round",
+    "bulletAlpha": 0,
     "lineThickness": 3,
     "title":"a/A=0.05",
+    "yField": "value",
     "valueField": "value",
+    "xField": "category"
          
   }, {
     "id":"g2",       
-    "balloonText": "<b>k:[[category]]<br/> d/A:[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
+    "bullet": "round",
+    "bulletAlpha": 0,
     "lineThickness": 3,
     "title":"a/A=0.10",
-    "valueField": "value2"
+    "yField": "value2",
+    "valueField": "value2",
+    "xField": "category"
     
      
   }, {
      "id":"g3",       
     "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
+    "bullet": "round",
+    "bulletAlpha": 0,
     "lineThickness": 3,
     "title":"a/A=0.15",
-    "valueField": "value3"
+    "yField": "value3",
+    "valueField": "value3",
+    "xField": "category"
     
      
   }, {  
      "id":"g4",       
-    "balloonText": "<b>k:[[category]]<br/> d/A:[[value]]</b>",
+    "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
+    "bullet": "round",
+    "bulletAlpha": 0,
     "lineThickness": 3,
     "title":"a/A=0.20",
-    "valueField": "value4"
+    "yField": "value4",
+    "valueField": "value4",
+    "xField": "category"
     
      
   }, { 
       "id":"g5",       
     "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
+    "bullet": "round",
+    "bulletAlpha": 0,
     "lineThickness": 3,
     "title":"a/A=0.25",
-    "valueField": "value5"
+    "yField": "value5",
+    "valueField": "value5",
+    "xField": "category"
     
      
   }, {  
      "id":"g6",       
     "balloonText": "<b>k:[[category]]<br/>d/A:[[value]]</b>",
+    "bullet": "round",
+    "bulletAlpha": 0,
     "lineThickness": 3,
     "title":"a/A=0.30",
-    "valueField": "value6"       
+    "yField": "value6",
+    "valueField": "value6",
+    "xField": "category"
                   
   } ],
 
@@ -108,7 +141,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "categoryBalloonEnabled": false,
     "cursorAlpha": 0,
     "zoomable": true,
-    "oneBalloonOnly": true
+    "oneBalloonOnly": false
   },
 
 "balloon": {
@@ -118,15 +151,5 @@ var chart = AmCharts.makeChart( "chartdiv", {
     //"offsetY": 8
    "pointerWidth":10
 },
-
-  "categoryField": "category",
-  "categoryAxis": {
-    "gridAlpha": 0.05,
-    "startOnAxis": true,
-    "tickLength": 5,
-    "labelFunction": function( label, item ) {
-      return '' + Math.round( item.dataContext.category * 10 ) / 10;
-    }
-  }
 
 });

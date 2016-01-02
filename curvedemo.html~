@@ -1,0 +1,12 @@
+<html>
+<head>
+<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/serial.js"></script>
+<script src="http://www.amcharts.com/lib/3/xy.js"></script>
+</head>
+<body>
+<body>
+    <div id="chartdiv" style="width: 800px; height: 400px;"></div>
+</body>
+</body>
+</html>
